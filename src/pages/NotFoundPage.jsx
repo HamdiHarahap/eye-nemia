@@ -5,7 +5,7 @@ const NotFoundPage = () => {
   useDocumentTitle('Halaman Tidak Ditemukan | EyeNemia');
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#f8f4f6] px-6 text-center">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#f8f4f6] px-4 text-center">
       <h1 className="text-7xl font-bold text-[#FF93B0] mb-4">404</h1>
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
         Halaman Tidak Ditemukan
@@ -14,8 +14,8 @@ const NotFoundPage = () => {
         Oops! Halaman yang kamu cari tidak tersedia atau sudah dipindahkan. Yuk
         kembali ke beranda dan lanjutkan pengecekan kesehatanmu.
       </p>
-      <div className="w-[20%]">
-        <Button url="/">Kembali ke Beranda</Button>
+      <div className="w-fit">
+        <Button url="/">Kembali</Button>
       </div>
       <div className="mt-12 text-sm text-gray-400">
         <p>&copy; {new Date().getFullYear()} EyeNemia. All rights reserved.</p>
