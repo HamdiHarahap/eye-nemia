@@ -9,15 +9,26 @@ const Button = (props) => {
     badge: 'bg-[#FF93B0]/40 text-[#FF94B0]',
   };
 
+  if (url) {
+    return (
+      <Link to={url} className="w-full">
+        <button
+          type="button"
+          className={`w-full px-4 py-2 ${variantType[variant]}`}
+        >
+          {children}
+        </button>
+      </Link>
+    );
+  }
+
   return (
-    <Link to={url} className="w-full">
-      <button
-        type={type}
-        className={`font-semibold w-full px-4 text-sm py-2 rounded-md transition-all duration-200 cursor-pointer ${variantType[variant]}`}
-      >
-        {children}
-      </button>
-    </Link>
+    <button
+      type={type}
+      className={`font-semibold w-full px-4 text-sm py-2 rounded-md transition-all duration-200 cursor-pointer ${variantType[variant]}`}
+    >
+      {children}
+    </button>
   );
 };
 
