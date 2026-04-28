@@ -1,9 +1,11 @@
 import Input from '../../ui/input';
 import Button from '../../ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { register } from '../../../services/authentication';
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: '',
     username: '',
@@ -20,8 +22,35 @@ const RegisterForm = () => {
     }));
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (form.password !== form.confirm) {
+      alert('Password tidak cocok');
+      return;
+    }
+
+    try {
+      const response = await register(form.name, form.username, form.password);
+
+      console.log(response);
+      alert('Register berhasil');
+
+      setForm({
+        name: '',
+        username: '',
+        password: '',
+        confirm: '',
+      });
+
+      navigate('/login');
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   return (
-    <form onSubmit={() => {}} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div className="flex flex-col gap-3">
         <Input
           label="Nama Lengkap"
