@@ -1,9 +1,14 @@
 import Input from '../../ui/input';
 import Button from '../../ui/button';
+import { login } from '../../../services/authentication';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { putAccessToken, putRefreshToken } from '../../../utils/token';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     username: '',
     password: '',
@@ -18,8 +23,29 @@ const LoginForm = () => {
     }));
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await login(form.username, form.password);
+
+      console.log(response);
+      alert('login berhasil');
+
+      const accessToken = response.data.accessToken;
+      const refreshToken = response.data.refreshToken;
+
+      putAccessToken(accessToken);
+      putRefreshToken(refreshToken);
+
+      navigate('/');
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   return (
-    <form onSubmit={() => {}} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div className="flex flex-col gap-3">
         <Input
           label="Username"
