@@ -38,6 +38,8 @@ const LoginForm = () => {
       putAccessToken(accessToken);
       putRefreshToken(refreshToken);
 
+      localStorage.setItem('userId', response.data.userId);
+
       navigate('/');
     } catch (err) {
       alert(err.message);
