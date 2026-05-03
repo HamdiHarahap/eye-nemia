@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 
 const Button = (props) => {
-  const { type = 'button', children, variant = 'primary', url } = props;
+  const {
+    type = 'button',
+    children,
+    variant = 'primary',
+    url,
+    onClick = () => {},
+  } = props;
 
   const variantType = {
     primary: `bg-[#FF93B0] text-white hover:bg-[#FF7FA3]`,
@@ -26,6 +32,7 @@ const Button = (props) => {
     <button
       type={type}
       className={`font-semibold w-full px-4 text-sm py-2 rounded-md transition-all duration-200 cursor-pointer ${variantType[variant]}`}
+      onClick={onClick}
     >
       {children}
     </button>
