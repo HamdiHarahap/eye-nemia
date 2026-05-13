@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { AlertTriangle } from 'lucide-react';
 import MainLayout from '../../layout/index';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const factors = [
   {
@@ -45,6 +46,8 @@ const factors = [
 ];
 
 const RiskFactorPage = () => {
+  useDocumentTitle('Faktor Penyebab Risiko | EyeNemia');
+
   const navigate = useNavigate();
 
   return (
