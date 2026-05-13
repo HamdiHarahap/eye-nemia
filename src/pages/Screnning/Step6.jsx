@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import MainLayout from '../../layout/index';
 import StepProgress from '../../components/StepProgress';
 import { useScreening } from '../../context/ScreeningContext';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const Step6 = () => {
+  useDocumentTitle('Screening | EyeNemia');
+
   const navigate = useNavigate();
 
   const fileInputRef = useRef(null);
