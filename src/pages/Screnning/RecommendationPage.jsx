@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import MainLayout from '../../layout/index';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const recommendations = [
   {
@@ -7,7 +8,7 @@ const recommendations = [
     iconBg: 'bg-green-50',
     title: 'Tingkatkan Makanan Tinggi Zat Besi',
     tips: [
-      'Konsumsi daging merah (sapi, kambing) 2–3 kali seminggu',
+      'Konsumsi daging merah (sapi, kambing) 2-3 kali seminggu',
       'Tambahkan hati ayam/sapi dalam menu makanan',
       'Makan sayuran hijau seperti bayam, kangkung setiap hari',
       'Konsumsi kacang-kacangan dan biji-bijian',
@@ -28,7 +29,7 @@ const recommendations = [
     iconBg: 'bg-red-50',
     title: 'Hindari Teh/Kopi Setelah Makan',
     tips: [
-      'Jangan minum teh atau kopi 1–2 jam setelah makan',
+      'Jangan minum teh atau kopi 1-2 jam setelah makan',
       'Ganti dengan air putih atau jus buah',
       'Teh dan kopi menghambat penyerapan zat besi',
     ],
@@ -41,7 +42,7 @@ const recommendations = [
       'Lakukan pemeriksaan Hb (hemoglobin) di laboratorium',
       'Konsultasi dengan dokter untuk diagnosis pasti',
       'Pertimbangkan suplemen zat besi jika direkomendasikan dokter',
-      'Periksa kesehatan secara rutin setiap 3–6 bulan',
+      'Periksa kesehatan secara rutin setiap 3-6 bulan',
     ],
   },
   {
@@ -50,7 +51,7 @@ const recommendations = [
     title: 'Tips Gaya Hidup Sehat',
     subtitle: 'Kebiasaan sehat lainnya untuk mendukung kesehatan optimal',
     tipsGrid: [
-      'Tidur cukup 7–8 jam setiap malam',
+      'Tidur cukup 7-8 jam setiap malam',
       'Kelola stres dengan baik',
       'Minum air putih minimal 8 gelas per hari',
       'Olahraga ringan secara teratur',
@@ -68,6 +69,8 @@ const recommendations = [
 ];
 
 const RecommendationPage = () => {
+  useDocumentTitle('Rekomendasi | EyeNemia');
+
   const navigate = useNavigate();
 
   return (
