@@ -7,17 +7,17 @@ const HomePage = () => {
 
   const benefitList = [
     {
-      icon: '',
+      icon: '/assets/icons/verified.svg',
       title: 'Deteksi Dini',
       desc: 'Identifikasi risiko anemia sejak dini berdasarkan data anda',
     },
     {
-      icon: '',
+      icon: '/assets/icons/book.svg',
       title: 'Edukasi Kesehatan',
       desc: 'Pelajari tentang anemia dan cara pencegahannya',
     },
     {
-      icon: '',
+      icon: '/assets/icons/shine.svg',
       title: 'Rekomendasi Personal',
       desc: 'Dapatkan saran kesehatan yang disesuaikan untuk anda',
     },
@@ -25,6 +25,7 @@ const HomePage = () => {
 
   return (
     <MainLayout>
+      <img src="" alt="" />
       <section className="px-28 flex justify-between items-center min-h-screen max-[520px]:px-4 max-[520px]:flex-col max-[520px]:items-start max-[520px]:py-32">
         <div className="w-[50%] max-[520px]:w-full flex flex-col gap-10">
           <div className="flex flex-col gap-5">
@@ -78,8 +79,8 @@ const HomePage = () => {
               key={index}
               className="flex flex-col gap-3 shadow-md p-5 rounded-lg h-full hover:shadow-xl hover:-translate-y-1 transform duration-300"
             >
-              <div className="rounded-lg bg-[#FF93B0] w-10 h-10 flex items-center justify-center">
-                <img src={item.icon} />
+              <div className="rounded-lg bg-[#FF93B0] w-fit p-2 flex items-center justify-center">
+                <img src={item.icon} className="w-7" />
               </div>
               <h3 className="font-semibold text-xl">{item.title}</h3>
               <p className="text-gray-500">{item.desc}</p>
