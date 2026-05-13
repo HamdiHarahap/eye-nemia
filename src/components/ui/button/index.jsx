@@ -12,7 +12,6 @@ const Button = (props) => {
   const variantType = {
     primary: `bg-[#FF93B0] text-white hover:bg-[#FF7FA3]`,
     secondary: `bg-white text-[#FF94B0] border border-[#FF93B0] hover:bg-[#FFEEF3]`,
-    badge: 'bg-[#FF93B0]/40 text-[#FF94B0]',
   };
 
   if (url) {
