@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import MainLayout from '../../layout/index';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const getRiskLevel = (score) => {
   if (score >= 70)
@@ -113,6 +114,8 @@ const BarProgress = ({ label, animatedValue, color }) => (
 );
 
 const ResultPage = () => {
+  useDocumentTitle('Hasil Screening | EyeNemia');
+
   const navigate = useNavigate();
   const location = useLocation();
 
