@@ -9,6 +9,7 @@ import {
   Area,
   AreaChart,
 } from 'recharts';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const trendData = [
   { date: '1 Feb', score: 32 },
@@ -67,6 +68,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const RiwayatMonitoringPage = () => {
   const navigate = useNavigate();
+  useDocumentTitle('Riwayat | EyeNemia');
 
   return (
     <MainLayout>
