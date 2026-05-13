@@ -52,7 +52,7 @@ const ProfilePage = () => {
             <p>Kelola informasi pribadi dan data kesehatan anda</p>
           </div>
           <div className="w-[15%] max-[520px]:w-[40%]">
-            <Button variant="secondary">Edit</Button>
+            <Button onClick={handleLogout}>Logout</Button>
           </div>
         </div>
         <div className="flex gap-12 justify-between items-center w-[55%] bg-white p-8 max-[520px]:p-5 rounded-lg drop-shadow-lg max-[520px]:w-full">
@@ -63,11 +63,13 @@ const ProfilePage = () => {
             <p className="text-2xl font-semibold">{user.name}</p>
             <span className="font-light ">{user.username}</span>
             <div className="w-32">
-              <Button variant="badge">Mahasiswa</Button>
+              <p className="bg-[#FF93B0]/40 text-[#FF94B0] text-center rounded-full text-sm font-semibold py-1">
+                Mahasiswa
+              </p>
             </div>
           </div>
           <div>
-            <Button onClick={handleLogout}>Logout</Button>
+            <Button variant="secondary">Edit</Button>
           </div>
         </div>
         <div className="flex w-[55%] max-[520px]:w-full bg-white p-8 rounded-lg drop-shadow-lg flex-col gap-8">
