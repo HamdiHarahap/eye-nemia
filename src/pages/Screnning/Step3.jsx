@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import MainLayout from '../../layout/index';
 import StepProgress from '../../components/StepProgress';
 import { useScreening } from '../../context/ScreeningContext';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const freqOptions = [
   'Setiap hari',
@@ -63,6 +64,8 @@ const RadioRow = ({ label, name, value, onChange }) => (
 );
 
 const Step3 = () => {
+  useDocumentTitle('Screening | EyeNemia');
+
   const navigate = useNavigate();
   const { formData, updateFormData } = useScreening();
 
