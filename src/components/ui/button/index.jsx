@@ -19,7 +19,7 @@ const Button = (props) => {
       <Link to={url} className="w-full">
         <button
           type="button"
-          className={`w-full px-4 py-2 ${variantType[variant]}`}
+          className={`font-semibold w-full px-4 text-sm py-2 rounded-md transition-all duration-200 cursor-pointer ${variantType[variant]}`}
         >
           {children}
         </button>
